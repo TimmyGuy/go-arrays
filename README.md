@@ -3,7 +3,8 @@
 
 ## Functions
 ### IndexOf
-Returns the first index of the needle in the array
+IndexOf returns the index of the first occurrence of the specified element in the array/slice.
+If the element is not found, it returns -1.
 ```go
 func IndexOf[Type comparable](array []Type, needle interface{}) int
 
@@ -18,7 +19,8 @@ func main() {
 ```
 
 ### LastIndexOf
-Returns the last index of the needle in the array
+LastIndexOf returns the index of the last occurrence of the specified element in the array/slice.
+If the element is not found, it returns -1.
 ```go
 func LastIndexOf[Type comparable](array []Type, needle interface{}) int
 
@@ -34,7 +36,9 @@ func main() {
 ```
 
 ### FindIndex
-Find the index based on a lambda function
+FindIndex returns the index of the first element in the array/slice that satisfies the given condition.
+It takes the original array/slice and a callable function that accepts an item from the array/slice and returns a boolean value indicating whether the condition is met.
+The function returns the index of the first matching element, or -1 if no element satisfies the condition.
 ```go
 func FindIndex[Type any](array []Type, callable func(item Type) bool) int
 
@@ -51,7 +55,9 @@ func main() {
 ```
 
 ### Find
-Find the item based on a lambda function
+Find returns the first element in the array/slice that satisfies the given condition.
+It takes the original array/slice and a callable function that accepts an item from the array/slice and returns a boolean value indicating whether the condition is met.
+The function returns the first matching element, or nil if no element satisfies the condition.
 ```go
 func Find[Type any](array []Type, callable func(item Type) bool) interface{}
 
@@ -68,7 +74,8 @@ func main() {
 ```
 
 ### Contains
-Check if array contains an item
+Contains checks whether the array/slice contains the specified element.
+It returns true if the element is found, false otherwise.
 ```go
 func Contains[Type comparable](array []Type, needle interface{}) bool
 
@@ -83,7 +90,7 @@ func main() {
 ```
 
 ### Flip
-Flips an array
+Flip reverses the order of elements in the array/slice and returns the modified array/slice.
 ```go
 func Flip[Type any](array []Type) []Type
 
@@ -98,7 +105,9 @@ func main() {
 ```
 
 ### Map
-Apply the given function to each element
+Map applies the given function to each element in the array/slice and returns a new array/slice with the results.
+It takes the original array/slice and a callable function that accepts an item from the array/slice and returns a modified or transformed value.
+The function returns a new array/slice containing the transformed values.
 ```go
 func Map[Type any](array []Type, callable func(item Type) Type) []Type
 
@@ -115,7 +124,9 @@ func main() {
 ```
 
 ### ForEach
-Apply the given function, does not have a return value
+ForEach applies the given function to each element in the array/slice without returning any results.
+It takes the original array/slice and a callable function that accepts an item from the array/slice.
+The function iterates over each element and applies the given function to it.
 ```go
 func ForEach[Type any](array []Type, callable func(item Type))
 
@@ -130,7 +141,10 @@ func main() {
 ```
 
 ### Slice
-Slice an array
+Slice returns a portion of the array/slice.
+It takes the original array/slice, a size indicating the number of elements to include, and a start index.
+The function returns a new array/slice containing elements from the original array/slice, starting from the given index and including the specified number of elements.
+If the start index is beyond the array bounds, an empty slice is returned.
 ```go
 func Slice[Type any](array []Type, size int, start int) []Type
 
@@ -146,7 +160,8 @@ func main() {
 *Also contains SliceFrom and SliceTo*
 
 ### Merge
-Merge 2 or more slices together
+Merge merges multiple slices into a single slice.
+It takes variable arguments representing the slices to be merged and returns the merged slice.
 ```go
 func Merge[Type any](slices ...[]Type) []Type
 
