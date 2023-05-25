@@ -64,8 +64,8 @@ func Flip[Type any](array []Type) []Type {
 // Map applies the given function to each element in the array/slice and returns a new array/slice with the results.
 // It takes the original array/slice and a callable function that accepts an item from the array/slice and returns a modified or transformed value.
 // The function returns a new array/slice containing the transformed values.
-func Map[Type any](array []Type, callable func(item Type) Type) []Type {
-	var res []Type
+func Map[Type, R any](array []Type, callable func(item Type) R) []R {
+	var res []R
 	for _, item := range array {
 		res = append(res, callable(item))
 	}
