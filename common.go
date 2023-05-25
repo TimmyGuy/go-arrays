@@ -107,7 +107,7 @@ func SliceTo[Type any](array []Type, size int) []Type {
 // SliceFrom returns an array/slice starting from the specified index until the end.
 // It is a convenience function that calls the Slice function with a size of 0, indicating all elements from the start index to the end of the array/slice.
 func SliceFrom[Type any](array []Type, start int) []Type {
-	return Slice(array, 0, start)
+	return Slice(array, len(array)-start, start)
 }
 
 // Merge merges multiple slices into a single slice.
